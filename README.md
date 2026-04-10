@@ -35,11 +35,11 @@ It includes:
 
 ## 🏗️ Architecture
 
-
+```
 User → Service → Banking API → PostgreSQL
-↓
-Dashboard
-
+                     ↓
+                Dashboard
+```
 
 ---
 
@@ -82,7 +82,6 @@ Isolated environment for all banking services.
 ---
 
 ### 6️⃣ Liveness & Readiness Probes
-
 - Readiness: `/api/ready`
 - Liveness: `/api/health`
 
@@ -100,53 +99,80 @@ strategy:
   rollingUpdate:
     maxUnavailable: 0
     maxSurge: 1
+```
 
 ✔ Zero downtime deployments
 
-8️⃣ Persistent Storage (PVC)
+---
+
+### 8️⃣ Persistent Storage (PVC)
 
 PostgreSQL uses Persistent Volume Claims:
 
 ✔ Data is not lost after pod restart or deletion
 
-9️⃣ Services
-ClusterIP → internal communication
-NodePort → external dashboard access
-🔥 Key Features
-Microservices architecture
-Kubernetes orchestration
-Auto-scaling (HPA)
-Self-healing system
-Persistent database storage
-Secure configuration management
-Zero-downtime deployments
-🧪 Testing Scenarios
-1️⃣ HPA Load Test
+---
 
+### 9️⃣ Services
+
+- ClusterIP → internal communication
+- NodePort → external dashboard access
+
+---
+
+## 🔥 Key Features
+
+- Microservices architecture
+- Kubernetes orchestration
+- Auto-scaling (HPA)
+- Self-healing system
+- Persistent database storage
+- Secure configuration management
+- Zero-downtime deployments
+
+---
+
+## 🧪 Testing Scenarios
+
+### 1️⃣ HPA Load Test
 Simulated traffic → CPU increased → pods scaled automatically
 
-2️⃣ Database Persistence Test
+---
+
+### 2️⃣ Database Persistence Test
+
 kubectl delete pod postgres-db-0
 
 ✔ Data remains safe
 
-3️⃣ Rolling Update Test
+---
 
+### 3️⃣ Rolling Update Test
 New image deployed → pods updated gradually → no downtime
 
-4️⃣ Health Checks
-/api/health → Liveness
-/api/ready → Readiness
-🚀 Future Improvements
-Add Prometheus & Grafana monitoring
-CI/CD pipeline (GitHub Actions)
-Ingress Controller
-Cloud deployment (AWS EKS)
-👩‍💻 Author
-Menna-Elyamany
-DevOps Engineer | Cloud & Kubernetes Enthusiast 
+---
 
-📌 GitHub: https://github.com/mennaelyamany2
-📌 LinkedIn: https://linkedin.com/in/menna-elyamany
+### 4️⃣ Health Checks
+- /api/health → Liveness Probe
+- /api/ready → Readiness Probe
+
+---
+
+## 🚀 Future Improvements
+
+- Add Prometheus & Grafana monitoring
+- CI/CD pipeline (GitHub Actions)
+- Ingress Controller
+- Cloud deployment (AWS EKS)
+
+---
+
+## 👩‍💻 Author
+
+**Menna Elyamany**  
+DevOps Engineer | Cloud & Kubernetes Enthusiast  
+
+📌 GitHub: https://github.com/mennaelyamany2  
+📌 LinkedIn: https://linkedin.com/in/menna-elyamany  
 
 Built as a DevOps learning project to simulate real-world Kubernetes infrastructure.
