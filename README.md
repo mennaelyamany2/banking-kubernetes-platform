@@ -143,5 +143,10 @@ CI/CD pipeline (GitHub Actions)
 Ingress Controller
 Cloud deployment (AWS EKS)
 👩‍💻 Author
+Menna-Elyamany
+DevOps Engineer | Cloud & Kubernetes Enthusiast 
+
+📌 GitHub: https://github.com/mennaelyamany2
+📌 LinkedIn: https://linkedin.com/in/menna-elyamany
 
 Built as a DevOps learning project to simulate real-world Kubernetes infrastructure.
